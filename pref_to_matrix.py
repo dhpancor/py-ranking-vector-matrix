@@ -29,12 +29,9 @@ class PrefToMatrix:
                 array = []
 
                 for j in range(len(self.preferences)):
-                    current_value = 0
-
-                    if i <= j:
-                        current_value = 0.5 * (
-                                    1 + (tweet.preferences.index(self.preferences[j]) / len(self.preferences) - 1)
-                                    - (tweet.preferences.index(self.preferences[i]) / len(self.preferences) - 1))
+                    current_value = 0.5 * (
+                        1 + (tweet.preferences.index(self.preferences[j]) / len(self.preferences) - 1)
+                        - (tweet.preferences.index(self.preferences[i]) / len(self.preferences) - 1))
 
                     array.append(current_value)
 
