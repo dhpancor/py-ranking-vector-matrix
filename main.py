@@ -1,5 +1,6 @@
 import mongoengine
 import appconfig
+from normalizers.top_n_normalizer import TopNNormalizer
 from resolvers.tmdb_movie_resolver import TMDBMovieResolver
 from tweet_extractor import TweetExtractor
 
@@ -11,8 +12,8 @@ if __name__ == '__main__':
                         host=appconfig.config['mongodb']['host'])
 
     # >> STEP1: This process all the tweets found on a CSV using a resolver.
-    tweet_extractor = TweetExtractor('output_got.csv', TMDBMovieResolver(year=2019))
-    tweet_extractor.process_tweets()
+    # tweet_extractor = TweetExtractor('output_got.csv', TMDBMovieResolver(year=2019))
+    # tweet_extractor.process_tweets()
 
     # >> STEP2: This normalizes all the tweets.
     # normalizer = TopNNormalizer(5)
