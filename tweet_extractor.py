@@ -2,8 +2,8 @@ import csv
 import html
 import re
 
-from TMDBMovieResolver import TMDBMovieResolver
-from tweet import Tweet
+from resolvers.tmdb_movie_resolver import TMDBMovieResolver
+from schemas.tweet import Tweet
 
 
 class TweetExtractor:
@@ -51,4 +51,4 @@ class TweetExtractor:
                     db_tweet.created_at = tweet['date']
                     db_tweet.save()
                 except:
-                    print("Error on tweet " + tweet['id'])
+                    print("Tweet " + tweet['id'] + " not a list or recognized by resolver.")

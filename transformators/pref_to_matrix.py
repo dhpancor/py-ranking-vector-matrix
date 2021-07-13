@@ -1,6 +1,6 @@
 import numpy as np
 
-from tweet import Tweet
+from schemas.tweet import Tweet
 
 
 class PrefToMatrix:

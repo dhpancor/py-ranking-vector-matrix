@@ -1,4 +1,4 @@
-from tweet import Tweet
+from schemas.tweet import Tweet
 
 
 class PrefToVector:
@@ -6,7 +6,7 @@ class PrefToVector:
     def __init__(self, preferences):
         """
         This class transforms all the tweets stored in the database
-        into a dictionary of vectores of preferences identified
+        into a dictionary of vectors of preferences identified
         by tweet ID.
         :param preferences: the list of the preferences.
         """
