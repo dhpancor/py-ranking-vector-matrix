@@ -1,4 +1,4 @@
-from tweet import Tweet
+from schemas.tweet import Tweet
 
 
 class TopNNormalizer:

@@ -2,7 +2,7 @@ import csv
 import html
 import re
 
-from resolvers.tmdb_movie_resolver import TMDBMovieResolver
+from resolvers.no_resolver import NoResolver
 from schemas.tweet import Tweet
 
 
@@ -10,7 +10,7 @@ class TweetExtractor:
 
     regex = r"^[\*\-\d]+[ \.\-]+(.+)$"
 
-    def __init__(self, csv_tweet_file, resolver=TMDBMovieResolver(year=2019)):
+    def __init__(self, csv_tweet_file, resolver=NoResolver()):
         self.csv_tweet_file = csv_tweet_file
         self.raw_tweets = None
         self.__resolver = resolver
