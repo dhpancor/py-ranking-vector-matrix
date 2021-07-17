@@ -5,7 +5,9 @@ config = {
         "username": "root",
         "password": "example",
         "authentication_source": "admin",
-        "db_name": "twitter_oscars"
+        "db_name": "twitter_gemuja2021"
     },
-    "tmdb_api_key": "INSERT_API_HERE"
+    "tmdb_api_key": "INSERT_API_HERE",
+    "using_delimiter": True,
+    "delimiter": ";"
 }

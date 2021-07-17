@@ -1,7 +1,10 @@
 import mongoengine
 import appconfig
 from normalizers.top_n_normalizer import TopNNormalizer
+from resolvers.no_resolver import NoResolver
 from resolvers.tmdb_movie_resolver import TMDBMovieResolver
+from transformators.pref_to_matrix import PrefToMatrix
+from transformators.pref_to_vector import PrefToVector
 from tweet_extractor import TweetExtractor
 
 if __name__ == '__main__':
@@ -12,25 +15,25 @@ if __name__ == '__main__':
                         host=appconfig.config['mongodb']['host'])
 
     # >> STEP1: This process all the tweets found on a CSV using a resolver.
-    # tweet_extractor = TweetExtractor('output_got.csv', TMDBMovieResolver(year=2019))
+    # tweet_extractor = TweetExtractor('prueba2.csv', NoResolver())
     # tweet_extractor.process_tweets()
 
     # >> STEP2: This normalizes all the tweets.
-    # normalizer = TopNNormalizer(5)
+    # normalizer = TopNNormalizer(4)
     # normalizer.normalize()
 
     preferences = [
-        'Parasite',
-        'Joker',
-        'Once Upon a Time… in Hollywood',
-        '1917',
-        'The Irishman'
+        'Anatomía de Grey',
+        'NCIS',
+        'Mentes criminales',
+        'La que se avecina'
     ]
 
     # >> STEP3-A: Calculate preferences vector.
     # vector = PrefToVector(preferences)
     # vector.calculate()
+    # print(vector.results['1416409686006448129'])
 
     # >> STEP3-B: Calculate the preferences matrix.
     # matrix = PrefToMatrix(preferences)
-    # print(matrix.results['1224890520167747585'])
+    # print(matrix.results['1416409686006448129'])
